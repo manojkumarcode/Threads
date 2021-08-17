@@ -1,29 +1,20 @@
 package com.thread;
 
-public class Mythread1 extends Thread {
+public class DemoPriority extends Thread {
 
 	@Override
 	public void run() {
-
-		try {
-			for (int i = 0; i < 5; i++) {
-				System.out.println(i);
-				Thread.sleep(6000);
-			}
-
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 		System.out.println("In run method, name:  : " + Thread.currentThread().getName());
 	}
 
 	public static void main(String[] args) {
 		System.out.println("In main method, name: " + Thread.currentThread().getName());
-		Thread t = new Mythread1();
+		Thread thread = new DemoPriority();
+		thread.setName("priority_thread");
+		thread.setPriority(MAX_PRIORITY);
 		// t.run();
-		t.start();
+		thread.start();
 		System.out.println("At the end of main method, name: " + Thread.currentThread().getName());
 
 	}
