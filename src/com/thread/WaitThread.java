@@ -10,7 +10,9 @@ public class WaitThread {
 		
 		
 		try {
-			notifyThread.wait();  // to use this I need to be owner of lock
+			synchronized(notifyThread) {
+				notifyThread.wait();  // to use this I need to be owner of lock
+			}
 			System.out.println("total value: " + notifyThread.total);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
