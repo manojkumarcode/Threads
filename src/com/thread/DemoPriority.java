@@ -15,6 +15,12 @@ public class DemoPriority extends Thread {
 		thread.setPriority(MAX_PRIORITY);
 		// t.run();
 		thread.start();
+		try {
+			thread.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("At the end of main method, name: " + Thread.currentThread().getName());
 
 	}
