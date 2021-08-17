@@ -16,7 +16,11 @@ public class NotifyThread extends Thread {
 	public void run() {
 
 		System.out.println("In run method, name:  : " + Thread.currentThread().getName());
-		total = x+y;
+		synchronized (this) {
+			total = x+y;
+			notify();
+		}
+		
 	}
 
 
