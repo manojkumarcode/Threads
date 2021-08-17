@@ -10,7 +10,8 @@ public class Mythread1 extends Thread {
 	public static void main(String[] args) {
 		System.out.println("In main method, name: " + Thread.currentThread().getName());
 		Thread t = new Mythread1();
-		t.run();
+		//t.run();
+		t.start();
 
 	}
 
