@@ -12,6 +12,7 @@ public class Mythread1 extends Thread {
 		Thread t = new Mythread1();
 		//t.run();
 		t.start();
+		System.out.println("At the end of main method, name: " + Thread.currentThread().getName());
 
 	}
 
